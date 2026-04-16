@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #07070d;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.bg-animated {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg, #00d4ff22, #a855f722, #ec489922);
+    background-size: 300% 300%;
+    animation: move 10s infinite;
+    z-index: -3;
+}
+
+@keyframes move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ANIME GIRL BACKGROUND */
+.anime-bg {
+    position: fixed;
+    inset: 0;
+    background: url("https://wallpaperaccess.com/full/2536658.jpg") center/cover no-repeat;
+    opacity: 0.18;
+    filter: blur(0px) brightness(1.1);
+    z-index: -2;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+
+
+.gradient-text {
+    background: linear-gradient(135deg, #00d4ff, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: #aaa;
+    max-width: 600px;
+}
+
+/* FLOATING PILLOW */
+.pillow {
+    width: 200px;
+    height: 120px;
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 50%;
+    box-shadow: 0 0 60px #00d4ff55;
+    position: absolute;
+    top: 20%;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-20px); }
+}
+
+/* BUTTONS */
+.btn-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(135deg, #00d4ff, #a855f7);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 1px solid #666;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* CARDS */
+.card {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #a855f755;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-box {
+    background: #111;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+}
+
+/* BIG BUTTON */
+.big {
+    font-size: 18px;
+    padding: 15px 35px;
+}
+
+/* =========================
+   🔥 HEADING UPGRADE PACK
+========================= */
+
+/* main hero heading */
+h1 {
+    font-size: 1000px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    text-shadow:
+        0 0 10px rgba(0, 212, 255, 0.25),
+        0 0 25px rgba(168, 85, 247, 0.15);
+    animation: titlePop 1.2s ease-out;
+}
+
+/* section headings */
+h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+
+    /* POP EFFECT */
+    text-shadow:
+        0 0 8px rgba(0, 212, 255, 0.2),
+        0 0 18px rgba(168, 85, 247, 0.15);
+
+    position: relative;
+    display: inline-block;
+
+    animation: floatTitle 4s ease-in-out infinite;
+}
+
+/* glowing underline effect */
+h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00d4ff, #a855f7, transparent);
+    border-radius: 10px;
+    filter: blur(1px);
+}
+
+/* animations */
+@keyframes titlePop {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatTitle {
+    0%, 100% {
+        transform: translateY(0px);
+        text-shadow:
+            0 0 8px rgba(0, 212, 255, 0.2),
+            0 0 18px rgba(168, 85, 247, 0.15);
+    }
+    50% {
+        transform: translateY(-6px);
+        text-shadow:
+            0 0 18px rgba(0, 212, 255, 0.35),
+            0 0 35px rgba(168, 85, 247, 0.25);
+    }
+}
+
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+}

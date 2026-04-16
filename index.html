@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeuroSleep | The Pillow That Judges You</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-animated"></div>
+
+<!-- anime girl background layer -->
+<div class="anime-bg"></div>
+
+<!-- HERO -->
+<section class="hero">
+
+    <h1 class="text-6xl md:text-8xl font-black mb-6 relative z-10">
+        NeuroSleep<br>
+        <span class="gradient-text">Finally,<br>A Pillow Smarter Than You.</span>
+    </h1>
+
+    <p class="text-xl text-gray-300 mb-6 relative z-10">
+        Powered by machine learning, bad decisions, and 3AM thoughts.
+    </p>
+
+    <div class="btn-group">
+        <button onclick="scrollToSection('features')" class="btn-primary">
+            Explore Features
+        </button>
+
+        <button onclick="openModal()" class="btn-secondary">
+            Let AI Judge Me
+        </button>
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section">
+    <h2>Features</h2>
+
+    <div class="grid">
+        <div class="card">AI Sleep Tracking</div>
+        <div class="card">Snore Detection</div>
+        <div class="card">Emotional Mode</div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+    <h2>Customer Reviews</h2>
+
+    <div class="grid">
+        <div class="card">"I slept 8 hours. Suspicious."</div>
+        <div class="card">"Better than therapy."</div>
+        <div class="card">"It judged me. I deserved it."</div>
+        <div class="card">"Saved my marriage."</div>
+        <div class="card">"Updated at 3AM. Bold move."</div>
+        <div class="card">"It watches me sleep... comfortingly."</div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section center">
+    <h2>Stop suffering. Start sleeping.</h2>
+
+    <button onclick="fakeCheckout()" class="btn-primary big">
+        Pre-order Now
+    </button>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+    <div class="modal-box">
+        <h2>AI Judgment System</h2>
+        <p id="ai-text"></p>
+
+        <button onclick="closeModal()" class="btn-primary small">
+            Close
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+<footer class="text-center py-10 text-gray-500">
+    © 2026 NeuroSleep — We know your sleep habits.
+</footer>
+</html>

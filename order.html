@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | NeuroSleep</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: radial-gradient(circle at top, #0f0f1a, #07070d);
+    color: white;
+}
+
+.glass {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #00d4ff, #a855f7);
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="min-h-screen flex items-center justify-center p-6">
+
+    <div class="glass w-full max-w-4xl p-8">
+
+        <!-- HEADER -->
+        <h1 class="text-4xl font-bold mb-2">Checkout</h1>
+        <p class="text-gray-400 mb-8">NeuroSleep Smart Pillow — Order Summary</p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- LEFT: ORDER SUMMARY -->
+            <div class="glass p-6">
+                <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+
+                <div class="flex justify-between mb-2">
+                    <span>NeuroSleep Pillow</span>
+                    <span>$399.00</span>
+                </div>
+
+                <div class="flex justify-between mb-2 text-gray-400">
+                    <span>AI Subscription (1 month free)</span>
+                    <span>$0.00</span>
+                </div>
+
+                <div class="flex justify-between mb-2 text-gray-400">
+                    <span>Shipping (emotionally monitored)</span>
+                    <span>$9.99</span>
+                </div>
+
+                <hr class="my-4 border-gray-700">
+
+                <div class="flex justify-between text-lg font-bold">
+                    <span>Total</span>
+                    <span>$408.99</span>
+                </div>
+
+                <p class="text-xs text-gray-500 mt-4">
+                    *Final price may increase based on your sleep anxiety levels.
+                </p>
+            </div>
+
+            <!-- RIGHT: FORM -->
+            <div class="glass p-6">
+
+                <h2 class="text-xl font-bold mb-4">Shipping Details</h2>
+
+                <input class="input mb-3" placeholder="Full Name">
+                <input class="input mb-3" placeholder="Email">
+                <input class="input mb-3" placeholder="Address">
+                <input class="input mb-3" placeholder="City">
+
+                <h2 class="text-xl font-bold mt-6 mb-4">Payment</h2>
+
+                <input class="input mb-3" placeholder="Card Number">
+                <div class="flex gap-3">
+                    <input class="input" placeholder="MM/YY">
+                    <input class="input" placeholder="CVV">
+                </div>
+
+                <button class="btn w-full mt-6" onclick="fakePay()">
+                    Pay Now
+                </button>
+
+                <p class="text-xs text-gray-500 mt-3 text-center">
+                    Secure checkout powered by “trust me bro” encryption
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function fakePay() {
+        // Disable button feel (optional nice touch)
+        const btn = document.querySelector(".btn");
+        btn.innerText = "Processing...";
+        btn.disabled = true;
+        btn.style.opacity = "0.7";
+    
+        // fake loading messages
+        alert("Processing payment...\n\nVerifying sleep compatibility...");
+    
+        setTimeout(() => {
+            alert("Final check complete...\nPreparing secure redirect...");
+        }, 2000);
+    
+        // after 5 seconds → rickroll
+        setTimeout(() => {
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }, 5000);
+    }
+    </script>
+
+</body>
+</html>
